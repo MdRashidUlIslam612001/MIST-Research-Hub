@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,60 +29,75 @@
   </head>
   <body>
     <!-- navbar starts -->
-    <nav class="navbar navbar-expand-xxl navbar-light border-bottom border-5 border-success">
-      <div class="container-fluid">
-        <button
-          class="navbar-toggler mb-3"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a href="home.html">
-          <img class="ms-md-5 ms-1" src="img/navlogo.png" alt="logo"
+    <nav
+    class="navbar navbar-expand-xxl navbar-light border-bottom border-5 border-success"
+  >
+    <div class="container-fluid">
+      <button
+        class="navbar-toggler mb-3"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a href="home.html">
+        <img class="ms-md-5 ms-1" src="img/navlogo.png" alt="logo"
+      /></a>
+
+      <div
+        class="collapse navbar-collapse mx-5 fw-bold"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="paper.html">Paper</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="fund.html"
+              >Funds</a
+            >
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="conferences.html">Conferences</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="faq.html">FAQs</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="forum.html">Forum</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a
+              class="nav-link active text-success fw-bolder"
+              aria-current="page"
+              href="contact.html"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <a href="#">
+          <img class="ms-3" src="img/profile.png" alt="profile"
         /></a>
-
-        <div
-          class="collapse navbar-collapse mx-5 fw-bold"
-          id="navbarSupportedContent"
+        <a href="#" class="text-decoration-none text-black">
+          <h6 class="mt-2 mx-3">Tanjim hossain</h6></a
         >
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="home.html">Home</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="projects.html">Projects</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="achievements.html">Achievements</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="publication.html">Publications</a>
-            </li>
-            
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="thesis.html">Thesis</a>
-            </li>
-            <li class="nav-item mx-3">
-              <a class="nav-link" href="activity.html">Activity</a>
-            </li>
-          </ul>
-          <a href="facultyprofile.html"> <img class="ms-3" src="img/profile.png" alt="profile" /></a> 
-          <a href="studentprofile.html" class="text-decoration-none text-black">   <h6 class="mt-2 mx-3  " >Jack</h6></a> 
 
-
-          <a href="index.html"
-            ><button type="button" class="btn btn-danger mx-3">
-              Log Out
-            </button></a
-          >
-        </div>
+        <a href="#" class="text-decoration-none"
+          ><button type="button" class="btn btn-danger mx-3">
+            Log Out
+          </button></a
+        >
       </div>
-    </nav>
+    </div>
+  </nav>
     <!-- navbar ends -->
 
     <div class="bg-light">
@@ -120,22 +136,20 @@
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Thesis
+                    Paper
                   </button>
                   <ul
                     class="dropdown-menu "
                     aria-labelledby="dropdownMenuButton1"
                   >
-                    <li><a class="dropdown-item" href="student_details.html">Student</a></li>
+                    <li><a class="dropdown-item" href="#">Student</a></li>
                     <li>
-                      <a class="dropdown-item" href="faculty_details.html">Faculty</a>
+                      <a class="dropdown-item" href="#">Faculty</a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="project_list.html">Project</a>
+                      <a class="dropdown-item" href="#">Alumni</a>
                     </li>
-                    <li>
-                      <a class="dropdown-item" href="thesis_list.html">Thesis</a>
-                    </li>
+                    
                     
                   </ul>
                 </div>
@@ -165,7 +179,7 @@
           <div class="col-xxl-9 col-12">
             
             <div class="card mb-5 border border-3  border-info">
-                <h5 class="card-header text-white bg-info ">Pending Thesis</h5>
+                <h5 class="card-header text-white bg-info ">Pending Papers</h5>
                 <div class="card-body bg-white">
                     <a
                      href="thesis_details_pending.html"
@@ -174,7 +188,7 @@
                        <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
                        <div class=" text-black">
                          <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
+                           <h6 class="d-inline-block">Artificial Intelligence</h6>
                            | 2019-2020
                            <a href="thesis_list.html" class="text-decoration-none float-end">
                              <div class="btn-group float-end" role="group" aria-label="Basic example">
@@ -196,7 +210,7 @@
                       <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
                       <div class=" text-black">
                         <p class="m-0 p-2">
-                          <h6 class="d-inline-block">Thesis Domain</h6>
+                          <h6 class="d-inline-block">Networking</h6>
                           | 2019-2020
                           <a href="thesis_list.html" class="text-decoration-none float-end">
                             <div class="btn-group float-end" role="group" aria-label="Basic example">
@@ -216,10 +230,10 @@
                      href="thesis_details_pending.html"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
-                       <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
+                       <h4 class="mb-2">Machine learning: Trends, perspectives, and prospects</h4>
                        <div class=" text-black">
                          <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
+                           <h6 class="d-inline-block">Networking</h6>
                            | 2019-2020
                            <a href="thesis_list.html" class="text-decoration-none float-end">
                              <div class="btn-group float-end" role="group" aria-label="Basic example">
@@ -244,7 +258,7 @@
                        <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
                        <div class=" text-black">
                          <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
+                           <h6 class="d-inline-block">Environmental Science</h6>
                            | 2019-2020
                            <a href="thesis_list.html" class="text-decoration-none float-end">
                              <div class="btn-group float-end" role="group" aria-label="Basic example">
@@ -269,7 +283,7 @@
 
 
             <div class="card mb-5 border border-3  border-info">
-                <h5 class="card-header text-white bg-info ">Thesises</h5>
+                <h5 class="card-header text-white bg-info ">Uploaded papers</h5>
                 <div class="card-body bg-white">
                     <a
                      href="thesis_details.html"
@@ -278,7 +292,7 @@
                        <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
                        <div class=" text-black">
                          <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
+                           <h6 class="d-inline-block">Environmental Science</h6>
                            | 2019-2020
                            
                          </p>
@@ -295,7 +309,7 @@
                       <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
                       <div class=" text-black">
                         <p class="m-0 p-2">
-                          <h6 class="d-inline-block">Thesis Domain</h6>
+                          <h6 class="d-inline-block">Artificial Intelligence</h6>
                           | 2019-2020
                           
                         </p>
@@ -310,10 +324,10 @@
                      href="thesis_details.html"
                      class="text-decoration-none text-black"
                      ><div class="p-3 mt-2 mb-2 border border-2  border-info">
-                       <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
+                       <h4 class="mb-2">Machine learning: Trends, perspectives, and prospects</h4>
                        <div class=" text-black">
                          <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
+                           <h6 class="d-inline-block">Networking</h6>
                            | 2019-2020
                            
                          </p>
@@ -330,7 +344,7 @@
                        <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
                        <div class=" text-black">
                          <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
+                           <h6 class="d-inline-block">Networking</h6>
                            | 2019-2020
                            
                          </p>
@@ -347,7 +361,7 @@
                        <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
                        <div class=" text-black">
                          <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
+                           <h6 class="d-inline-block">Data Communication</h6>
                            | 2019-2020
                            
                          </p>
@@ -364,7 +378,7 @@
                        <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
                        <div class=" text-black">
                          <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
+                           <h6 class="d-inline-block">Artificial Intelligence</h6>
                            | 2019-2020
                            
                          </p>
@@ -381,7 +395,24 @@
                        <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
                        <div class=" text-black">
                          <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
+                           <h6 class="d-inline-block">Environmental Science</h6>
+                           | 2019-2020
+                           
+                         </p>
+                         
+                       </div>
+                     </div>
+                   </a>
+                 </div>
+                 <div class="card-body bg-white">
+                    <a
+                     href="thesis_details.html"
+                     class="text-decoration-none text-black"
+                     ><div class="p-3 mt-2 mb-2 border border-2  border-info">
+                       <h4 class="mb-2">Machine learning: Trends, perspectives, and prospects</h4>
+                       <div class=" text-black">
+                         <p class="m-0 p-2">
+                           <h6 class="d-inline-block">Cryptography</h6>
                            | 2019-2020
                            
                          </p>
@@ -398,7 +429,7 @@
                        <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
                        <div class=" text-black">
                          <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
+                           <h6 class="d-inline-block">Artificial Intelligence</h6>
                            | 2019-2020
                            
                          </p>
@@ -415,7 +446,7 @@
                        <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
                        <div class=" text-black">
                          <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
+                           <h6 class="d-inline-block">Machine Learning</h6>
                            | 2019-2020
                            
                          </p>
@@ -432,24 +463,7 @@
                        <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
                        <div class=" text-black">
                          <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
-                           | 2019-2020
-                           
-                         </p>
-                         
-                       </div>
-                     </div>
-                   </a>
-                 </div>
-                 <div class="card-body bg-white">
-                    <a
-                     href="thesis_details.html"
-                     class="text-decoration-none text-black"
-                     ><div class="p-3 mt-2 mb-2 border border-2  border-info">
-                       <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
-                       <div class=" text-black">
-                         <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
+                           <h6 class="d-inline-block">Augmented Reality</h6>
                            | 2019-2020
                            
                          </p>
@@ -468,7 +482,7 @@
                        <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
                        <div class=" text-black">
                          <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
+                           <h6 class="d-inline-block">Artificial Intelligence</h6>
                            | 2019-2020
                            
                          </p>
@@ -486,7 +500,7 @@
                        <h4 class="mb-2">Causability and explainability of artificial intelligence in medicine</h4>
                        <div class=" text-black">
                          <p class="m-0 p-2">
-                           <h6 class="d-inline-block">Thesis Domain</h6>
+                           <h6 class="d-inline-block">Machine Learning</h6>
                            | 2019-2020
                            
                          </p>
