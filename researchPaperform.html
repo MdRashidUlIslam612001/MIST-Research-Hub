@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+
+    <!-- favicon link css  -->
+    <link rel="shortcut icon" type="image/png" href="img/MIST.png" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Form</title>
+  </head>
+  <body class="bg-light">
+    <!-- navbar starts -->
+    <nav class="navbar navbar-expand-xxl navbar-light bg-white border-bottom border-5 border-success">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler mb-3"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="home.html">
+          <img class="ms-md-5 ms-2" src="img/navlogo.png" alt="logo"
+        /></a>
+
+        <div
+        class="collapse navbar-collapse mx-5 fw-bold"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="paper.html">Paper</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="fund.html"
+              >Funds</a
+            >
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="conferences.html">Conferences</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="faq.html">FAQs</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="forum.html">Forum</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+        <a href="#">
+          <img class="ms-3" src="img/profile.png" alt="profile"
+        /></a>
+        <a href="#" class="text-decoration-none text-black">
+          <h6 class="mt-2 mx-3">Tanjim hossain</h6></a
+        >
+
+        <a href="index.html"
+          ><button type="button" class="btn btn-danger mx-3">
+            Log Out
+          </button></a
+        >
+      </div>
+      </div>
+    </nav>
+    <!-- navbar ends -->
+    <!-- main container  -->
+
+    <div class="bg-light">
+      <div class="container mt-5">
+        <h2 class="my-5">Research Paper Submission form :</h2>
+
+        <form class="row g-3 bg-white border p-3" action="Submitted.html">
+          <!-- <form class="row g-3 bg-white border p-3" method="post" enctype="multipart/form-data"> -->
+           
+            <div class="col-md-6">
+              <fieldset disabled>
+                <div class="form-group">
+                  <label for="disabledTextInput">Account ID</label>
+                  <input type="text" id="disabledTextInput" class="form-control" placeholder="S-0000000004">
+                </div>
+            </div> 
+  
+            <div class="col-md-6">
+              <fieldset disabled>
+                <div class="form-group">
+                  <label for="disabledTextInput">Student/Faculty ID</label>
+                  <input type="text" id="disabledTextInput" class="form-control" placeholder="202014033">
+                </div>
+            </div>
+  
+            <div class="col-md-12">
+              <fieldset disabled>
+                <div class="form-group">
+                  <label for="disabledTextInput">Research ID</label>
+                  <input type="text" id="disabledTextInput" class="form-control" placeholder="R-000005">
+                </div>
+            </div> 
+
+            
+            <div class="col-md-12">
+              <h6>Paper Type<font color="ff0000">*</font></h6>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="radio1" name="optradio1" value="option1" checked>Conference Paper
+              <label class="form-check-label" for="radio1"></label>
+            </div>
+            <div class="form-check">
+              <input type="radio" class="form-check-input" id="radio2" name="optradio1" value="option2">Journal Paper
+              <label class="form-check-label" for="radio2"></label>
+            </div>
+            </div>
+
+            <div class="col-md-12">
+              <h6>Publish Status<font color="ff0000">*</font></h6>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" id="radio3" name="optradio2" value="option3" checked>Published
+                <label class="form-check-label" for="radio3"></label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" id="radio4" name="optradio2" value="option4">Unpublished
+                <label class="form-check-label" for="radio4"></label>
+              </div>
+              </div>
+  
+
+          
+
+          <!--
+          <div class="col-md-6">
+            <label for="Supervisor(s)" class="form-label">
+              <h6>
+                Consulted by
+                <a
+                  target="_blank"
+                  title="Type the name of Supervisor,then the name of co-supervisor"
+                  ><img
+                    src="https://shots.jotform.com/kade/Screenshots/blue_question_mark.png"
+                    height="13px"
+                /></a>
+                <font color="ff0000">*</font>
+              </h6>
+            </label>
+            <br />
+            <select
+              class="form-control selectpicker"
+              multiple
+              data-live-search="true"
+              data-placeholder="Supervisor,Co Supervisor"
+              required
+            >
+              <option value="Lec Muhaimin Bin Munir">
+                Lec Muhaimin Bin Munir
+              </option>
+              <option value="Lec Nafiz Imtiaz Khan">
+                Lec Nafiz Imtiaz Khan
+              </option>
+              <option value="Lec Shadman Aadeeb">Lec Shadman Aadeeb</option>
+              <option value="Prof Mahbubur Rahman">Prof Mahbubur Rahman</option>
+              <option value="Lec Swapnil Biswas">Lec Swapnil Biswas</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+      
+          </div> -->
+
+       <!--   
+
+          <div class="col-md-6">
+            <label for="CommenceDate" class="form-label">
+              <h6>Commence Date <font color="ff0000">*</font></h6>
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="CommenceDate"
+              placeholder="DD/MM/YYYY"
+              required
+            />
+          </div>  
+
+          <div class="col-md-6">
+            <label for="CompletionDate" class="form-label"
+              ><h6>Completion Date <font color="ff0000">*</font></h6>
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="CompletionDate"
+              placeholder="DD/MM/YYYY"
+              required
+            />
+          </div> -->
+
+          
+          
+
+          <div class="col-md-12">
+            <label for="Paper Title" class="form-label"
+              ><h6>Paper Title <font color="ff0000">*</font></h6>
+            </label>
+            <textarea
+              class="form-control"
+              id="PaperTitle"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+
+          <div class="col-md-12">
+            <label for="Paper Domain" class="form-label">
+              <h6>Paper Domain <font color="ff0000">*</font></h6>
+            </label>
+
+            <textarea
+              class="form-control"
+              id="PaperDomain"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+
+          <div class="col-md-12">
+            <label for="Paper Link URL" class="form-label">
+              <h6>Paper Link</h6>
+            </label>
+            <input
+              type="text"
+              class="form-control"
+              id="Paper Link URL"
+              placeholder="Paper Link URL"
+            />
+          </div>
+
+          
+
+         <!--
+          <div class="col-md-12">
+            <label for="Thesis Synopsis" class="form-label">
+              <h6>Abstract<font color="ff0000">*</font></h6>
+            </label>
+
+            <textarea
+              class="form-control"
+              id="ThesisSynopsis"
+              rows="5"
+              required
+            ></textarea>
+          </div> -->
+
+          <div class="col-md-12">
+            <label for="Team Photo" class="form-label">
+              <h6>Paper PDF</h6>
+            </label>
+            <br />
+            <input type="File" accept=".pdf" />
+          </div>
+
+          
+          <div class="col-md-12">
+            <label for="Publisher" class="form-label"
+              ><h6>Publisher</h6>
+            </label>
+            <textarea
+              class="form-control"
+              id="Publisher"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+
+          <div class="col-md-12">
+            <label for="Conference Name" class="form-label"
+              ><h6>Conference Name<font color="ff0000">*</font></h6>
+            </label>
+            <textarea
+              class="form-control"
+              id="ConferenceName"
+              rows="1"
+              required
+            ></textarea>
+          </div>
+
+          <div class="col-md-12">
+            <label for="Type of Paper" class="form-label"
+              ><h6>Type of Paper<font color="ff0000">*</font></h6>
+            </label>
+            <textarea
+              class="form-control"
+              id="TypeofPaper"
+              rows="1"
+              required
+            ></textarea>
+          </div>
+
+          <div class="col-md-12">
+            <label for="Journal Name" class="form-label"
+              ><h6>Journal Name<font color="ff0000">*</font></h6>
+            </label>
+            <textarea
+              class="form-control"
+              id="JournalName"
+              rows="1"
+              required
+            ></textarea>
+          </div>
+
+          <div class="col-md-12">
+            <label for="SJR Rating" class="form-label">
+              <h6>SJR Rating</h6>
+            </label>
+            <br />
+
+            <select class="form-control selectpicker" required>
+              <option value="Q1">Q1</option>
+              <option value="Q2">Q2</option>
+              <option value="Q3">Q3</option>
+              <option value="Q4">Q4</option>
+            </select>
+          </div>
+
+
+          <div class="col-md-12">
+            <label for="ISSN" class="form-label"
+              ><h6>ISSN Number<font color="ff0000">*</font></h6>
+            </label>
+            <textarea
+              class="form-control"
+              id="ISSN"
+              rows="1"
+              required
+            ></textarea>
+          </div>
+          <!--
+          <div class="col-md-6">
+            <label for="Proposal" class="form-label">
+              <h6>Proposal(ppt/pdf)</h6>
+            </label>
+            <br />
+            <input type="File" accept=".ppt, .pptx,.pdf" />
+          </div>  
+
+
+          <div class="col-md-6">
+            <label for="Prototype" class="form-label">
+              <h6>Prototype(ppt/pdf)</h6>
+            </label>
+            <br />
+            <input type="File" accept=".ppt, .pptx,.pdf" />
+          </div> -->
+
+
+
+
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-success">Submit</button>
+          </div>
+        </form>
+      </div>
+      <!-- footer -->
+
+      <div class="container-fluid bg-black py-2 mt-5">
+        <div class="row">
+          <div class="col-md-4 pt-3">
+            <p class="text-white-50 text-center">
+              © 2022 MIST. All rights reserved
+            </p>
+            <p></p>
+          </div>
+
+          <div class="col-md-4 pt-3">
+            <p class="text-white-50 text-center">
+              <i class="bi bi-telephone"></i>+880 176 902 3806
+            </p>
+          </div>
+          <div class="col-md-4 pt-3">
+            <p class="text-white-50 text-center">
+              <i class="bi bi-envelope"></i> info@mist.ac.bd
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer ends -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
