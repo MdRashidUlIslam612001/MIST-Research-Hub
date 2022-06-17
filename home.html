@@ -47,8 +47,9 @@
   <body>
     <!-- navbar starts -->
     <nav
-      class="navbar navbar-expand-xxl navbar-light border-bottom border-5 border-success"
-    >
+      class="navbar navbar-expand-xxl navbar-light border-bottom border-5 border-success fixed-top"
+      id="mainNav"
+      >
       <div class="container-fluid">
         <button
           class="navbar-toggler mb-3"
@@ -61,7 +62,7 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a href="home.html">
+        <a href="home.html" class="navbar-brand">
           <img class="ms-md-5 ms-1" src="img/navlogo.png" alt="logo"
         /></a>
 
@@ -114,12 +115,13 @@
         </div>
       </div>
     </nav>
+    <div style="margin-top: 7rem;"></div>
     <!-- navbar ends -->
 
     <div class="container px-4 pt-5">
       <div class="row gx-5">
         <!-- LEFT BAR -->
-        <div class="col-xxl-9 col-12">
+        <div class="col-xxl-9 col-12" style="margin-top: -3rem;">
 
           
 
@@ -292,7 +294,7 @@
             </a>
           </div>
           <div class="col-md-6 col-xl-4 my-4">
-            <a href="paper.htmll" class="text-decoration-none text-black">
+            <a href="paper.html" class="text-decoration-none text-black">
               <div class="border-3 border border-success card mx-auto rounded " style="width: 18rem">
                 <img src="img/ml.jpg" class="card-img-top" alt="..." style="width: 285px; height: 176px;"/>
                 <div class="card-body">
@@ -574,6 +576,12 @@
 
       <!-- footer -->
     </div>
+    
+    <!-- Back to top button -->
+    <button type="button" class="btn btn-success btn-floating" id="btn-back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
