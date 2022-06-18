@@ -285,6 +285,7 @@
 window.addEventListener('DOMContentLoaded', event => {
 
   console.log('doc loaded');
+
   // Navbar shrink function
   var navbarShrink = function () {
       const navbarCollapsible = document.body.querySelector('#mainNav');
@@ -334,7 +335,7 @@ window.addEventListener('DOMContentLoaded', event => {
           }
       });
   });
-
+ 
   //back-to-top
   if(document.getElementById('btn-back-to-top')!=null){
     //Get the button
