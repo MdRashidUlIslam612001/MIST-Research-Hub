@@ -1,12 +1,7 @@
 <?php
-session_start(); // this NEEDS TO BE AT THE TOP of the page before any output etc
+// this NEEDS TO BE AT THE TOP of the page before any output etc
+include 'db_conn.php';
 
-$conn = oci_connect('MISTRESEARCHHUB', 'MistResearchHub','localhost/XE')
-  or die(oci_error());
-if (!$conn) {
-  echo "sorry";
-} else {
-}
 
 ?>
 <!DOCTYPE html>
@@ -419,7 +414,7 @@ if (!$conn) {
                                 
                               <div class="card-body bg-white">
                                 <a
-                                  href="paper_details.html"
+                                  href="paper_details.php?id='.$row['RESEARCH_ID'].'"
                                   class="text-decoration-none text-black"
                                   ><div class="p-3 mt-2 mb-2 border border border-2  border-success">
                                     <h4 class="mb-3"> 
@@ -427,6 +422,9 @@ if (!$conn) {
                 
                                   </h4>
                                     <p class="m-0 p-2">
+                                    <h6 class="inline-block">
+                                        ' .$row['PAPER_TYPE'] . ' Paper
+                                        </h6>
                                         <h6 class="d-inline-block">' .$row['PUBLISH_STATUS']. '</h6>
                                         <h6 class="inline-block">
                                         ' .$row['PUBLISHER'] . '
