@@ -282,6 +282,80 @@
 
 // new stuff added here
 
+var gen_author_id_field = function () {
+  var no = document.getElementById('no_of_authors').value;
+  if(no<1 || no>20) return;
+  document.getElementById('id_par').innerHTML = '';
+  for(var cnt=1;cnt<=no;cnt++) {
+    var def_input = document.getElementById('id_node_def').cloneNode(true);
+    def_input.id = 'id_node' + cnt;
+    def_input.style.display = 'block';
+    def_input.children[0].for = 'sorfid'+cnt;
+    def_input.children[1].id = 'sorfid'+cnt;
+    def_input.children[1].name = 'sorfid'+cnt;
+    def_input.children[1].placeholder = 'Author '+cnt;
+    
+    def_input.children[2].children[0].id = 'student'+cnt;
+    def_input.children[2].children[0].name = 'acc_type'+cnt;
+    def_input.children[2].children[1].for = 'student'+cnt;
+
+    def_input.children[3].children[0].id = 'faculty'+cnt;
+    def_input.children[3].children[0].name = 'acc_type'+cnt;
+    def_input.children[3].children[1].for = 'faculty'+cnt;
+
+    def_input.children[4].children[0].id = 'alumni'+cnt;
+    def_input.children[4].children[0].name = 'acc_type'+cnt;
+    def_input.children[4].children[1].for = 'alumni'+cnt;
+    
+    document.getElementById('id_par').appendChild(def_input);
+  }
+}
+
+var gen_award_field = function () {
+  var no = document.getElementById('no_of_awards').value;
+  if(no<1 || no>20) return;
+  document.getElementById('award_par').innerHTML = '';
+  for(var cnt=1;cnt<=no;cnt++) {
+    var def_input = document.getElementById('award_def').cloneNode(true);
+    def_input.id = 'award_n' + cnt;
+    def_input.style.display = 'block';
+    def_input.children[0].for = 'award'+cnt;
+    def_input.children[1].id = 'award'+cnt;
+    def_input.children[1].name = 'award'+cnt;
+    def_input.children[1].placeholder = 'Award '+cnt;
+    document.getElementById('award_par').appendChild(def_input);
+  }
+}
+
+var show_form = function () {
+  if(document.getElementById('conf').checked) {
+    Array.from(document.getElementsByClassName('conf')).forEach(node => {
+      node.style.display = 'block';
+      node.children[1].setAttribute('required','');
+    });
+    var cnt=1;
+    Array.from(document.getElementsByClassName('jour')).forEach(node => {
+      node.style.display = 'none';
+      if(cnt==2) node.children[2].children[0].removeAttribute('required');
+      else node.children[1].removeAttribute('required');
+      cnt++;
+    });
+  }
+  else {
+    Array.from(document.getElementsByClassName('conf')).forEach(node => {
+      node.style.display = 'none';
+      node.children[1].removeAttribute('required');
+    });
+    var cnt=1;
+    Array.from(document.getElementsByClassName('jour')).forEach(node => {
+      node.style.display = 'block';
+      if(cnt==2) node.children[2].children[0].setAttribute('required','');
+      else node.children[1].setAttribute('required','');
+      cnt++;
+    });
+  }
+}
+
 window.addEventListener('DOMContentLoaded', event => {
 
   console.log('doc loaded');
@@ -364,5 +438,10 @@ window.addEventListener('DOMContentLoaded', event => {
     document.documentElement.scrollTop = 0;
     }
   }
+
+  if(document.title == 'Research Paper Form') {
+    show_form();
+  }
+  else console.log(document.title);
 
 });
