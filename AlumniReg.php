@@ -99,8 +99,8 @@
 
 <!-- navbar starts -->
 <div id="nav-placeholder"></div>
-<script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script> -->
-<!-- navbar ends
+<script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script>
+<!-- navbar ends-->
 
 <div class="bg-light" >
   <div class="container" style="padding: 10px 10px 0px 0px;">
@@ -118,7 +118,7 @@
       
       <div class="col-md-6">
         <label for="AlumniID" class="form-label">
-        <h6>ALUMNI ID<font color="ff0000">*</font></h6>
+        <h6>Student ID<font color="ff0000">*</font></h6>
         </label>
         <input type="text" required class="form-control" name="AlumniID" id="AlumniID" maxlength="9" minlength="9"/>
       </div>
