@@ -1,7 +1,27 @@
 <?php
 // this NEEDS TO BE AT THE TOP of the page before any output etc
 include 'db_conn.php';
-
+if ($_SERVER['REQUEST_METHOD'] == 'GET') { 
+  if(isset($_GET['search'])) {
+    $searcher = $_GET['searcher'];
+    $sql = "
+    CREATE OR REPLACE VIEW RESEARCH_VIEW
+    (\"RESEARCH_ID\",\"APPROVE_STATUS\",\"PAPER_PDF\",\"PAPER_LINK\",\"PUBLISHER\",\"PAPER_TITLE\",\"PUBLISH_STATUS\",\"PAPER_ABSTRACT\",\"PAPER_TYPE\") 
+    AS (SELECT * FROM RESEARCH WHERE PAPER_TITLE LIKE '%$searcher%')";
+    $stid = oci_parse($conn, $sql);
+    $r = oci_execute($stid);
+    //echo $sql;
+  }
+}
+else {
+  $sql = "
+  CREATE OR REPLACE VIEW RESEARCH_VIEW
+    (\"RESEARCH_ID\",\"APPROVE_STATUS\",\"PAPER_PDF\",\"PAPER_LINK\",\"PUBLISHER\",\"PAPER_TITLE\",\"PUBLISH_STATUS\",\"PAPER_ABSTRACT\",\"PAPER_TYPE\") 
+    AS (SELECT * FROM RESEARCH)";
+  $stid = oci_parse($conn, $sql);
+  $r = oci_execute($stid);
+  //echo "bye";
+}
 
 ?>
 <!DOCTYPE html>
@@ -54,8 +74,8 @@ include 'db_conn.php';
   </head>
   <body>
     <!-- navbar starts -->
-    <div id="nav-placeholder"></div>
-    <script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script>
+    <!-- <div id="nav-placeholder"></div>
+    <script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script> -->
     <!-- navbar ends -->
 
     <!-- papers -->
@@ -65,14 +85,16 @@ include 'db_conn.php';
         <!-- search bar -->
         <div class="row-gx-5">
           <div class="col-xxl-12 col-12 mb-5">
+            <form action="" method="GET">
             <div class="input-group mx-auto" id="search-bar">
               <label class="btn btn-success" style="text-decoration: none;">Paper Title</label>
-              <input type="text" class="form-control border border-2  border-success" id="searcher" placeholder="Type to search..." aria-label="Type" aria-describedby="addon-wrapping" oninput="" onkeyup="if(event.key == 'Enter');">
+              <input type="text" class="form-control border border-2  border-success" id="searcher" name="searcher" placeholder="Type to search..." aria-label="Type" aria-describedby="addon-wrapping" oninput="" onkeyup="if(event.key == 'Enter');">
               <button type="button" class="btn bg-transparent" style="margin-left: -40px; z-index: 100;" id="del-search" onclick="">
                   <i class="fa fa-times"></i>
               </button>
-              <button class="btn btn-success" id="search-icon" type="button" onclick=""><i class="bi bi-search"></i></button>
+              <button class="btn btn-success" id="search" name="search" value="search" type="submit" onclick=""><i class="bi bi-search"></i></button>
             </div>
+            </form>
           </div>
         </div>
         <!-- search bar ends -->
@@ -405,7 +427,7 @@ include 'db_conn.php';
 
 
               <?php
-                                $sql = "select * from RESEARCH WHERE APPROVE_STATUS='Approved' ";
+                                $sql = "select * from RESEARCH_VIEW WHERE APPROVE_STATUS='Approved' ";
                                 $stid = oci_parse($conn, $sql);
                                 $r = oci_execute($stid);
                                 while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
