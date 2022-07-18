@@ -1,9 +1,9 @@
 <?php
   include 'db_conn.php';
   if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
-    echo 'submitted';
+    
     if(isset($_POST['submit'])) {
-      echo 'subm1';
+     
       $name = $_POST['AlumniName'];
       $id = $_POST['AlumniID'];
       $dept = $_POST['Department'];
@@ -18,7 +18,7 @@
       $experience = $_POST['exp'];
       $password=$_POST['password'];
       $institution = "Military Institute of Science and Technology";
-      
+
       $res_int = "";
       $cnt=0;
       if(isset($_POST['resint'])){
@@ -69,6 +69,10 @@
       crossorigin="anonymous"
     />
 
+
+
+
+    
  <!-- Vendor CSS Files -->
  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -78,7 +82,6 @@
  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
  <link
  rel="stylesheet"
  href="New folder/style1.css"
@@ -97,9 +100,11 @@
 </head>
 <body >
 
+
+
 <!-- navbar starts -->
 <div id="nav-placeholder"></div>
-<script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script>
+<script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script> 
 <!-- navbar ends-->
 
 <div class="bg-light" >

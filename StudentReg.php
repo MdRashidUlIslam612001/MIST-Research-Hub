@@ -28,14 +28,14 @@
       };
 
       $sql = "
-      insert into users (ACC_ID,NAME,PHONE,EMAIL,PASSWORD,DEPARTMENT,RESEARCH_INTEREST,NUMBER_OF_RESEARCHES,ATTENDED_CONFERENCE)
-      VALUES ('S_' || per_user_sq.NEXTVAL,'$name','$phone','$email','$password','$dept','$res_int','$no_of_researches','$no_of_attended_conferences')";
+      insert into users (ACC_ID,NAME, CONTACT,PASSWORD,DEPARTMENT,RESEARCH_INTEREST,NUMBER_OF_RESEARCHES,ATTENDED_CONFERENCE)
+      VALUES ('S_' || per_user_sq.NEXTVAL,'$name',CONTACT('$email','$phone'),'$password','$dept','$res_int','$no_of_researches','$no_of_attended_conferences')";
       $stid = oci_parse($conn, $sql);
       $r = oci_execute($stid);
 
       $sql = "
       insert into student (STUDENT_ID ,ACC_ID,INSTITUTION ,CGPA )
-      VALUES ('$id','S_' || per_user_sq.CURRVAL,'$institution','$cgpa')";
+      VALUES ('$id','S_' || per_user_sq.currVAL,'$institution','$cgpa')";
       $stid = oci_parse($conn, $sql);
       $r = oci_execute($stid);
     }
