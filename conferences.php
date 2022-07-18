@@ -50,7 +50,7 @@ include 'db_conn.php';
 
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-    <title>Papers</title>
+    <title>Conferences</title>
   </head>
   <body>
     <!-- navbar starts -->
