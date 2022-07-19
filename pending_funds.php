@@ -49,7 +49,7 @@ include 'db_conn.php';
 
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
-    <title>Papers</title>
+    <title>Pending Funds</title>
   </head>
   <body>
     <!-- navbar starts -->
@@ -399,7 +399,7 @@ include 'db_conn.php';
           <!-- Right BAR      <div class= "card-body bg-white" >-->
           <div class="col-xxl-9 col-12">
             <div class="card mb-2 border border-3  border-success">
-              <h5 class="card-header text-white bg-success">Pending Papers</h5>
+              <h5 class="card-header text-white bg-success">Pending Funds</h5>
 
 
 
