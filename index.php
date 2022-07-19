@@ -158,7 +158,7 @@ else echo "<script>console.log('logged out');</script>";
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
 
-            <div class="swiper-slide" onclick="document.location.href='paper_details.html'">
+            <div class="swiper-slide" onclick="document.location.href='paper_details.php'">
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -171,7 +171,7 @@ else echo "<script>console.log('logged out');</script>";
               </div>
             </div><!-- End testimonial item -->
   
-            <div class="swiper-slide" onclick="document.location.href='paper_details.html'">
+            <div class="swiper-slide" onclick="document.location.href='paper_details.php'">
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -183,7 +183,7 @@ else echo "<script>console.log('logged out');</script>";
                 <h4>Sharifa Rania Mahmud</h4>
               </div>
             </div><!-- End testimonial item -->
-            <div class="swiper-slide" onclick="document.location.href='paper_details.html'">
+            <div class="swiper-slide" onclick="document.location.href='paper_details.php'">
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -196,7 +196,7 @@ else echo "<script>console.log('logged out');</script>";
                 <h4>Muhaimin Bin Munir</h4>
               </div>
             </div>
-            <div class="swiper-slide" onclick="document.location.href='paper_details.html'">
+            <div class="swiper-slide" onclick="document.location.href='paper_details.php'">
               <div class="testimonial-item">
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
@@ -227,7 +227,7 @@ else echo "<script>console.log('logged out');</script>";
 
         <div class="row">
           <div class="col-md-6 col-xl-4 my-4 ">
-            <a href="paper.html" class="text-decoration-none text-black ">
+            <a href="paper.php" class="text-decoration-none text-black ">
               <div class="border-3 border border-success card mx-auto  rounded " style="width: 18rem">
                 <img src="img/AI.jpg" class="card-img-top" alt="..." style="width: 285px; height: 176px;" />
                 <div class="card-body">
@@ -237,7 +237,7 @@ else echo "<script>console.log('logged out');</script>";
             </a>
           </div>
           <div class="col-md-6 col-xl-4 my-4">
-            <a href="paper.html" class="text-decoration-none text-black">
+            <a href="paper.php" class="text-decoration-none text-black">
               <div class="border-3 border border-success card mx-auto rounded " style="width: 18rem">
                 <img src="img/ml.jpg" class="card-img-top" alt="..." style="width: 285px; height: 176px;"/>
                 <div class="card-body">
@@ -247,7 +247,7 @@ else echo "<script>console.log('logged out');</script>";
             </a>
           </div>
           <div class="col-md-6 col-xl-4 my-4">
-            <a href="paper.html" class="text-decoration-none text-black">
+            <a href="paper.php" class="text-decoration-none text-black">
               <div class="border-3 border border-success card mx-auto rounded " style="width: 18rem">
                 <img src="img/ar.jpg" class="card-img-top" alt="..." style="width: 285px; height: 176px;" />
                 <div class="card-body">
@@ -257,7 +257,7 @@ else echo "<script>console.log('logged out');</script>";
             </a>
           </div>
           <div class="col-md-6 col-xl-4 my-4">
-            <a href="paper.html" class="text-decoration-none text-black">
+            <a href="paper.php" class="text-decoration-none text-black">
               <div class="border-3 border border-success card mx-auto rounded " style="width: 18rem">
                 <img src="img/cryptography.jpg" class="card-img-top" alt="..." style="width: 285px; height: 176px;" />
                 <div class="card-body">
@@ -267,7 +267,7 @@ else echo "<script>console.log('logged out');</script>";
             </a>
           </div>
           <div class="col-md-6 col-xl-4 my-4">
-            <a href="paper.html" class="text-decoration-none text-black">
+            <a href="paper.php" class="text-decoration-none text-black">
               <div class="border-3 border border-success card mx-auto rounded " style="width: 18rem">
                 <img src="img/robotics.jpg" class="card-img-top" alt="..." style="width: 285px; height: 176px;" />
                 <div class="card-body">
@@ -277,7 +277,7 @@ else echo "<script>console.log('logged out');</script>";
             </a>
           </div>
           <div class="col-md-6 col-xl-4 my-4">
-            <a href="paper.html" class="text-decoration-none text-black">
+            <a href="paper.php" class="text-decoration-none text-black">
               <div class="border-3 border border-success card mx-auto rounded  rounded " style="width: 18rem">
                 <img src="img/networking.jpg" class="card-img-top" alt="..." style="width: 285px; height: 176px;" />
                 <div class="card-body">

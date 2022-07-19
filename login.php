@@ -30,11 +30,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
           exit();
       }
       else {
-          $sql = "select acc_id FROM users WHERE acc_id='$acc_id' AND password='$pass'";
+          $sql = "select acc_id,name FROM users WHERE acc_id='$acc_id' AND password='$pass'";
           $stid = oci_parse($conn, $sql);
           $r = oci_execute($stid);
           if ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) {
             $_SESSION['acc_id'] = $row['ACC_ID'];
+            $_SESSION['name'] = $row['NAME'];
             header("Location: index.php");
             exit();
           }
@@ -208,8 +209,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
   </head>
   <body>
     <!-- navbar starts -->
-    <!-- <div id="nav-placeholder"></div>
-    <script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script> -->
+    <div id="nav-placeholder"></div>
+    <script> $(function(){ $("#nav-placeholder").load("navbar.php"); }); </script>
     <!-- navbar ends -->
 
 
@@ -220,7 +221,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="social-btn text-center">
                     <form action="" method="POST">
                       <input type="text" id="acc_id" name="acc_id" placeholder="Enter your account_id">
-                      <input type="password" id="password" name="password" placeholder="Passowrd">
+                      <input type="password" id="password" name="password" placeholder="Password">
                       <br>
                       <button type="submit" class="btn btn-warning btn-lg">Log In</button>
                     </form>

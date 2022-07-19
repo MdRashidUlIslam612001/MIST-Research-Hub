@@ -74,8 +74,8 @@ else {
   </head>
   <body>
     <!-- navbar starts -->
-    <!-- <div id="nav-placeholder"></div>
-    <script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script> -->
+    <div id="nav-placeholder"></div>
+    <script> $(function(){ $("#nav-placeholder").load("navbar.php"); }); </script>
     <!-- navbar ends -->
 
     <!-- papers -->

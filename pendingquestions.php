@@ -55,7 +55,7 @@ include 'db_conn.php';
   <body>
     <!-- navbar starts -->
     <div id="nav-placeholder"></div>
-    <script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script>
+    <script> $(function(){ $("#nav-placeholder").load("navbar.php"); }); </script>
     <!-- navbar ends -->
 
     <!-- papers -->
@@ -81,7 +81,7 @@ include 'db_conn.php';
                                 echo '
                                 
                               <div class="card-body bg-white">
-                                <a  href="paper_details.html"    class="text-decoration-none text-black" >
+                                <a  href="paper_details.php"    class="text-decoration-none text-black" >
                                 <div class="p-3 mt-2 mb-2 border border border-2  border-success">
                                     <h4 class="mb-3"> 
                                       ' .$row['QUESTION'] .'

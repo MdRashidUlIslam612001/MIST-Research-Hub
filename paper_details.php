@@ -69,7 +69,7 @@ echo $researchID;
   <body>
     <!-- navbar starts -->
     <div id="nav-placeholder"></div>
-    <script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script>
+    <script> $(function(){ $("#nav-placeholder").load("navbar.php"); }); </script>
      <!--navbar ends -->
 
     <!-- middle part starts -->

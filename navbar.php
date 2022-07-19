@@ -60,13 +60,34 @@ include 'db_conn.php';
           <a href="studentprofile.html">
             <img class="ms-3" src="img/profile.png" alt="profile"
           /></a>
-          <a href="studentprofile.html" class="text-decoration-none text-black">
-            <h6 class="mt-2 mx-3">Tanjim hossain</h6></a
-          >
+          <a href=
+          <?php 
+            if(isset($_SESSION['acc_id'])) echo "studentprofile.html";
+            else echo "#"; 
+            ?>
+           class="text-decoration-none text-black">
+            <h6 class="mt-2 mx-3">
+            <?php 
+            if(isset($_SESSION['acc_id'])) echo $_SESSION['name'];
+            else echo 'Not logged in'; 
+            ?>
+            </h6></a>
 
-          <a href="logout.php" class="text-decoration-none"
-            ><button type="button" class="btn btn-danger mx-3">
-              Log Out
+          <a href=
+          <?php 
+            if(isset($_SESSION['acc_id'])) echo "logout.php";
+            else echo "login.php"; 
+            ?> 
+            class="text-decoration-none"
+            ><button type="button" class="btn 
+            <?php 
+            if(isset($_SESSION['acc_id'])) echo "btn-danger";
+            else echo "btn-success"; 
+            ?> mx-3">
+            <?php 
+            if(isset($_SESSION['acc_id'])) echo "Log Out";
+            else echo "Log In"; 
+            ?>
             </button></a
           >
         </div>
