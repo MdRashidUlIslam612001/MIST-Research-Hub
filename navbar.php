@@ -45,7 +45,7 @@ include 'db_conn.php';
               >
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="conferences.html">Conferences</a>
+              <a class="nav-link" href="conferences.php">Conferences</a>
             </li>
             <li class="nav-item mx-3">
               <a class="nav-link" href="faq.html">FAQs</a>

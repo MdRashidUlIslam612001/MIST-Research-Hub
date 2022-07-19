@@ -1,13 +1,7 @@
 <?php
 session_start(); // this NEEDS TO BE AT THE TOP of the page before any output etc
 
-$conn = oci_connect('DBMS', 'DBMS','localhost/XE')
-  or die(oci_error());
-if (!$conn) {
-  echo "sorry";
-} else {
-}
-
+include 'db_conn.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +54,7 @@ if (!$conn) {
   <body>
     <!-- navbar starts -->
     <div id="nav-placeholder"></div>
-    <script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script>
+    <script> $(function(){ $("#nav-placeholder").load("navbar.php"); }); </script>
     <!-- navbar ends -->
 
     <!-- papers -->
@@ -419,7 +413,7 @@ if (!$conn) {
                                 
                               <div class="card-body bg-white">
                                 <a
-                                  href="paper_details.html"
+                                  href="paper_details.php"
                                   class="text-decoration-none text-black"
                                   ><div class="p-3 mt-2 mb-2 border border border-2  border-success">
                                     <h4 class="mb-3"> 
