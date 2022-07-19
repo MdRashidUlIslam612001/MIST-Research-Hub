@@ -138,29 +138,29 @@ echo $researchID;
           $sql = "select * from Research R , conference_paper C  where R.Research_id = '$researchID' AND C.Research_id=R.Research_id ";
           $stid = oci_parse($conn, $sql);
           $r = oci_execute($stid);
-          while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
+          while ($row1 = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
             {
            
               echo '
   
             <div class="info-card p-3 border border-2 border-success m-3">
                 <h4>Publishers</h4>
-                <p>' .$row['PUBLISHER']. '</p>
+                <p>' .$row1['PUBLISHER']. '</p>
             </div>
   
             <div class="info-card p-3 border border-2 border-success m-3">
               <h4>Conference Name</h4>
-              <p>' .$row['CONFERENCE_NAME']. '</p>
+              <p>' .$row1['CONFERENCE_NAME']. '</p>
             </div>
   
             <div class="info-card p-2 border border-2 border-success m-3">
               <h4>Type of Paper </h4>
-              <p>' .$row['TYPE_OF_PAPER']. '</p>
+              <p>' .$row1['TYPE_OF_PAPER']. '</p>
             </div>
   
             <div class="info-card p-2 border border-2 border-success m-3">
             <h4>DOI </h4>
-            <p>' .$row['DOI']. '</p>
+            <p>' .$row1['DOI']. '</p>
           </div>
   
   
@@ -179,29 +179,29 @@ echo $researchID;
             $sql = "select * from Research R , journal_paper C  where R.Research_id = '$researchID' AND C.Research_id=R.Research_id ";
             $stid = oci_parse($conn, $sql);
             $r = oci_execute($stid);
-            while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
+            while ($row1 = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
               {
              
                 echo '
     
               <div class="info-card p-3 border border-2 border-success m-3">
                   <h4>Publishers</h4>
-                  <p>' .$row['PUBLISHER']. '</p>
+                  <p>' .$row1['PUBLISHER']. '</p>
               </div>
     
               <div class="info-card p-3 border border-2 border-success m-3">
               <h4>JOURNAL NAME Name</h4>
-              <p>' .$row['JOURNAL_NAME']. '</p>
+              <p>' .$row1['JOURNAL_NAME']. '</p>
             </div>
   
             <div class="info-card p-2 border border-2 border-success m-3">
               <h4>SJR RATING </h4>
-              <p>' .$row['SJR_RATING']. '</p>
+              <p>' .$row1['SJR_RATING']. '</p>
             </div>
   
             <div class="info-card p-2 border border-2 border-success m-3">
             <h4>ISSN</h4>
-            <p>' .$row['ISSN']. '</p>
+            <p>' .$row1['ISSN']. '</p>
           </div>
     
     
@@ -251,7 +251,7 @@ echo $researchID;
           $sql = "select * from Research R , Faculty_Research FR , FACULTY F , USERS U  where R.Research_id = '$researchID' AND FR.Research_id=R.Research_id AND F.FACULTY_ID=FR.FACULTY_ID AND U.ACC_ID=F.ACC_ID";
           $stid = oci_parse($conn, $sql);
           $r = oci_execute($stid);
-          while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
+          while ($row1 = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
             {
            
               echo '
@@ -262,9 +262,9 @@ echo $researchID;
                     src="https://faces-img.xcdn.link/image-lorem-face-6688.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center">'. $row['NAME'] .'</h5>
-                  <p class="m-0 text-center"> '. $row['DESIGNATION'] .'</p>
-                  <p class="m-0 text-center">'. $row['FACULTY_ID'] .'</p>
+                  <h5 class="mt-3 text-center">'. $row1['NAME'] .'</h5>
+                  <p class="m-0 text-center"> '. $row1['DESIGNATION'] .'</p>
+                  <p class="m-0 text-center">'. $row1['FACULTY_ID'] .'</p>
                 </div>
                 
              
@@ -277,7 +277,7 @@ echo $researchID;
           $sql = "select * from Research R , Student_Research SR , STUDENT S , USERS U  where R.Research_id = '$researchID' AND SR.Research_id=R.Research_id AND S.STUDENT_ID=SR.STUDENT_ID AND U.ACC_ID=S.ACC_ID";
           $stid = oci_parse($conn, $sql);
           $r = oci_execute($stid);
-          while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
+          while ($row1 = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
             {
            
               echo '
@@ -288,9 +288,9 @@ echo $researchID;
                     src="https://faces-img.xcdn.link/image-lorem-face-6688.jpg"
                     alt=""
                   />
-                  <h5 class="mt-3 text-center">'. $row['NAME'] .'</h5>
-                  <p class="m-0 text-center"> '. $row['DEPARTMENT'] .'</p>
-                  <p class="m-0 text-center">'. $row['STUDENT_ID'] .'</p>
+                  <h5 class="mt-3 text-center">'. $row1['NAME'] .'</h5>
+                  <p class="m-0 text-center"> '. $row1['DEPARTMENT'] .'</p>
+                  <p class="m-0 text-center">'. $row1['STUDENT_ID'] .'</p>
                 </div>
                 
              
@@ -302,7 +302,7 @@ echo $researchID;
             $sql = "select * from Research R , Alumni_Research AR , Alumni A , USERS U  where R.Research_id = '$researchID' AND AR.Research_id=R.Research_id AND A.STUDENT_ID=AR.STUDENT_ID AND U.ACC_ID=A.ACC_ID";
             $stid = oci_parse($conn, $sql);
             $r = oci_execute($stid);
-            while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
+            while ($row1 = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
               {
              
                 echo '
@@ -313,9 +313,9 @@ echo $researchID;
                       src="https://faces-img.xcdn.link/image-lorem-face-6688.jpg"
                       alt=""
                     />
-                    <h5 class="mt-3 text-center">'. $row['NAME'] .'</h5>
-                    <p class="m-0 text-center"> '. $row['BATCH'] .'</p>
-                    <p class="m-0 text-center">'. $row['STUDENT_ID'] .'</p>
+                    <h5 class="mt-3 text-center">'. $row1['NAME'] .'</h5>
+                    <p class="m-0 text-center"> '. $row1['BATCH'] .'</p>
+                    <p class="m-0 text-center">'. $row1['STUDENT_ID'] .'</p>
                   </div>
                   
                
