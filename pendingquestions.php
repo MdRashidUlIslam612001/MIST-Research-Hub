@@ -1,12 +1,7 @@
 <?php
 session_start(); // this NEEDS TO BE AT THE TOP of the page before any output etc
 
-$conn = oci_connect('DBMS', 'DBMS','localhost/XE')
-  or die(oci_error());
-if (!$conn) {
-  echo "sorry";
-} else {
-}
+include 'db_conn.php';
 
 ?>
 <!DOCTYPE html>
