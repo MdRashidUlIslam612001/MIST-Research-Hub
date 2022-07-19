@@ -7,10 +7,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $sql = "
     CREATE OR REPLACE VIEW RESEARCH_VIEW
     (\"RESEARCH_ID\",\"APPROVE_STATUS\",\"PAPER_PDF\",\"PAPER_LINK\",\"PUBLISHER\",\"PAPER_TITLE\",\"PUBLISH_STATUS\",\"PAPER_ABSTRACT\",\"PAPER_TYPE\") 
-    AS (SELECT * FROM RESEARCH WHERE PAPER_TITLE LIKE '%$searcher%')";
+    AS (SELECT * FROM RESEARCH WHERE LOWER(PAPER_TITLE) LIKE LOWER('%$searcher%'))";
     $stid = oci_parse($conn, $sql);
     $r = oci_execute($stid);
     //echo $sql;
+  }
+  else {
+    $sql = "
+    CREATE OR REPLACE VIEW RESEARCH_VIEW
+      (\"RESEARCH_ID\",\"APPROVE_STATUS\",\"PAPER_PDF\",\"PAPER_LINK\",\"PUBLISHER\",\"PAPER_TITLE\",\"PUBLISH_STATUS\",\"PAPER_ABSTRACT\",\"PAPER_TYPE\") 
+      AS (SELECT * FROM RESEARCH)";
+    $stid = oci_parse($conn, $sql);
+    $r = oci_execute($stid);
+    //echo "bye";
   }
 }
 else {

@@ -248,7 +248,7 @@ echo $researchID;
           
 
             
-          $sql = "select * from Research R , Faculty_Research FR , FACULTY F , USERS U  where R.Research_id = '$researchID' AND FR.Research_id=R.Research_id AND F.FACULTY_ID=FR.FACULTY_ID AND U.ACC_ID=F.ACC_ID";
+          $sql = "select * from Research R , Faculty_Research FR , FACULTY F , USER_INFO_VIEW U  where R.Research_id = '$researchID' AND FR.Research_id=R.Research_id AND F.FACULTY_ID=FR.FACULTY_ID AND U.ACC_ID=F.ACC_ID";
           $stid = oci_parse($conn, $sql);
           $r = oci_execute($stid);
           while ($row1 = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
@@ -274,7 +274,7 @@ echo $researchID;
 
 
                
-          $sql = "select * from Research R , Student_Research SR , STUDENT S , USERS U  where R.Research_id = '$researchID' AND SR.Research_id=R.Research_id AND S.STUDENT_ID=SR.STUDENT_ID AND U.ACC_ID=S.ACC_ID";
+          $sql = "select * from Research R , Student_Research SR , STUDENT S , USER_INFO_VIEW U  where R.Research_id = '$researchID' AND SR.Research_id=R.Research_id AND S.STUDENT_ID=SR.STUDENT_ID AND U.ACC_ID=S.ACC_ID";
           $stid = oci_parse($conn, $sql);
           $r = oci_execute($stid);
           while ($row1 = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
@@ -299,7 +299,7 @@ echo $researchID;
             }
 
 
-            $sql = "select * from Research R , Alumni_Research AR , Alumni A , USERS U  where R.Research_id = '$researchID' AND AR.Research_id=R.Research_id AND A.STUDENT_ID=AR.STUDENT_ID AND U.ACC_ID=A.ACC_ID";
+            $sql = "select * from Research R , Alumni_Research AR , Alumni A , USER_INFO_VIEW U  where R.Research_id = '$researchID' AND AR.Research_id=R.Research_id AND A.STUDENT_ID=AR.STUDENT_ID AND U.ACC_ID=A.ACC_ID";
             $stid = oci_parse($conn, $sql);
             $r = oci_execute($stid);
             while ($row1 = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
