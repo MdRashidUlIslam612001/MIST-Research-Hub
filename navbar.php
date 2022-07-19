@@ -57,18 +57,32 @@ include 'db_conn.php';
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
-          <a href="studentprofile.html">
+          <a href="#">
             <img class="ms-3" src="img/profile.png" alt="profile"
           /></a>
           <a href=
           <?php 
-            if(isset($_SESSION['acc_id'])) echo "studentprofile.html";
+            if(isset($_SESSION['acc_id'])) {
+              if($_SESSION['acc_id'][0]=='D') {
+                echo "admin_dashboard.html";
+              }
+              else {
+                echo "studentprofile.html";
+              }
+            }
             else echo "#"; 
             ?>
            class="text-decoration-none text-black">
             <h6 class="mt-2 mx-3">
             <?php 
-            if(isset($_SESSION['acc_id'])) echo $_SESSION['name'];
+            if(isset($_SESSION['acc_id'])) {
+              if($_SESSION['acc_id'][0]=='D') {
+                echo "Admin Dashboard";
+              }
+              else {
+                echo $_SESSION['name'];
+              }
+            }
             else echo 'Not logged in'; 
             ?>
             </h6></a>
