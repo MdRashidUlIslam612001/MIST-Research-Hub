@@ -1,8 +1,11 @@
 <?php
 session_start();
 include 'db_conn.php';
+if(isset($_SESSION['acc_id'])) echo "<script>console.log('logged in');</script>";
+else echo "<script>console.log('logged out');</script>";
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -53,8 +56,8 @@ include 'db_conn.php';
   </head>
   <body>
     <!-- navbar starts -->
-    <!-- <div id="nav-placeholder"></div>
-    <script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script> -->
+    <div id="nav-placeholder"></div>
+    <script> $(function(){ $("#nav-placeholder").load("navbar.php"); }); </script>
     <!-- navbar ends -->
 
     <div class="container px-4 pt-5">
