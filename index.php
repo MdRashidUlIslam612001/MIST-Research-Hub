@@ -1,7 +1,6 @@
 <?php
-// this NEEDS TO BE AT THE TOP of the page before any output etc
+session_start();
 include 'db_conn.php';
-
 
 ?>
 <!DOCTYPE html>
@@ -54,8 +53,8 @@ include 'db_conn.php';
   </head>
   <body>
     <!-- navbar starts -->
-    <div id="nav-placeholder"></div>
-    <script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script>
+    <!-- <div id="nav-placeholder"></div>
+    <script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script> -->
     <!-- navbar ends -->
 
     <div class="container px-4 pt-5">
