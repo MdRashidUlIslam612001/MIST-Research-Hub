@@ -1,6 +1,5 @@
 <?php
 session_start();
-session_start();
 include 'db_conn.php';
 if(isset($_SESSION['acc_id'])) echo "<script>console.log('logged in');</script>";
 else echo "<script>console.log('logged out');</script>";
