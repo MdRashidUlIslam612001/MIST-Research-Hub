@@ -67,7 +67,7 @@ include 'db_conn.php';
                 echo "admin_dashboard.html";
               }
               else {
-                echo "studentprofile.html";
+                echo "studentprofile.php";
               }
             }
             else echo "#"; 
