@@ -71,7 +71,7 @@ include 'db_conn.php';
                                 $r = oci_execute($stid);
                                
                                 while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
-                                { $ar=$row['AMOUNT_RAISED'] /10;
+                                { $ar=($row['AMOUNT_REQUIRED'] /$row['AMOUNT_RAISED'])*100 ;
 
                                 echo '
                                 
@@ -89,7 +89,7 @@ include 'db_conn.php';
                 
                                   </h4>
                                   <h6 class="mb-3">Amount left to be raised: 
-                                  ' .$row['AMOUNT_LEFT'] .' Taka
+                                  ' .$row['AMOUNT_LEFT']*(-1) .' Taka
             
                               </h6>
 
@@ -104,7 +104,7 @@ include 'db_conn.php';
                                    </a>
                                   </p>
                                   <div class="progress">
-                                  <div class="progress-bar bg-success" role="progressbar" style="width: '.$ar.'%; " aria-valuenow=" ' .$row['AMOUNT_RAISED'] .';" aria-valuemin="0" aria-valuemax=" ' .$row['AMOUNT_REQUIRED'] .'">2500/50,000 Tk raised</div>
+                                  <div class="progress-bar bg-success" role="progressbar" style="width: '.$ar.'%; " aria-valuenow=" ' .$row['AMOUNT_REQUIRED'] .';" aria-valuemin="0" aria-valuemax=" ' .$row['AMOUNT_RAISED'] .'">'.$row['AMOUNT_REQUIRED'].' Tk / '.$row['AMOUNT_RAISED'].' Tk raised</div>
                               </div>
                               <br>
                               <a class="btn-sm btn-success" id="donatefund" type="button" href="grantproviderform.php" style="text-decoration: none;">Donate Fund</a>
