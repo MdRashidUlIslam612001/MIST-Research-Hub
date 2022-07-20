@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'db_conn.php';
+$sortcomm = '';
 if ($_SERVER['REQUEST_METHOD'] == 'GET') { 
   if(isset($_GET['search'])) {
     $searcher = $_GET['searcher'];
@@ -11,6 +12,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $stid = oci_parse($conn, $sql);
     $r = oci_execute($stid);
     //echo $sql;
+  }
+  else if(isset($_GET['sortbyname'])) {
+    $sortcomm='ORDER BY PAPER_TITLE';
+  }
+  else if(isset($_GET['sortbyawards'])) {
+    $sql = "
+    CREATE OR REPLACE VIEW RESEARCH_VIEW
+      (\"RESEARCH_ID\",\"APPROVE_STATUS\",\"PAPER_TITLE\",\"PAPER_TYPE\",\"PUBLISHER\",\"PUBLISH_STATUS\",\"NO_OF_AWARDS\") 
+      AS (SELECT RESEARCH_ID,APPROVE_STATUS,PAPER_TITLE,PAPER_TYPE,PUBLISHER,PUBLISH_STATUS,(SELECT COUNT(*) FROM AWARDS A WHERE A.RESEARCH_ID=R.RESEARCH_ID) AS \"NO_OF_AWARDS\" FROM RESEARCH R)";
+    $stid = oci_parse($conn, $sql);
+    $r = oci_execute($stid);
+    $sortcomm='ORDER BY NO_OF_AWARDS DESC';
   }
   else {
     $sql = "
@@ -94,7 +107,7 @@ else {
         <!-- search bar -->
         <div class="row-gx-5">
           <div class="col-xxl-12 col-12 mb-5">
-            <form action="" method="GET">
+            <form action="" method="GET" id="search_form">
             <div class="input-group mx-auto" id="search-bar">
               <label class="btn btn-success" style="text-decoration: none;">Paper Title</label>
               <input type="text" class="form-control border border-2  border-success" id="searcher" name="searcher" placeholder="Type to search..." aria-label="Type" aria-describedby="addon-wrapping" oninput="" onkeyup="if(event.key == 'Enter');">
@@ -113,6 +126,7 @@ else {
           <div class="col-xxl-3 col-12 mb-5">
 
             <!-- sort by -->
+            <form action="" method="GET" id="sort_form">
             <div class="p-3 border bg-white border border-3  border-success">
               <div class="dropdown">
                 <button
@@ -129,17 +143,16 @@ else {
                   aria-labelledby="dropdownMenuButton1"
                 >
                   <li>
-                    <a class="dropdown-item" href="#">Alphabetically</a>
+                    <button class="dropdown-item" type="submit" id="sortbyname" name="sortbyname" value="sortbyname">Alphabetically</button>
                   </li>
+                  <!-- onclick="document.getElementById('filter_form').submit();" -->
                   <li>
-                    <a class="dropdown-item" href="#">No. of awards</a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">No. of conferences</a>
+                    <button class="dropdown-item" type="submit" id="sortbyawards" name="sortbyawards" value="sortbyawards">No. of awards</button>
                   </li>
                 </ul>
               </div>
             </div>
+            </form>
 
             <br>
 
@@ -436,7 +449,7 @@ else {
 
 
               <?php
-                                $sql = "select * from RESEARCH_VIEW WHERE APPROVE_STATUS='Approved' ";
+                                $sql = "select * from RESEARCH_VIEW WHERE APPROVE_STATUS='Approved' $sortcomm";
                                 $stid = oci_parse($conn, $sql);
                                 $r = oci_execute($stid);
                                 while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 

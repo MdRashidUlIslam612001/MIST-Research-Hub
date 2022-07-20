@@ -83,7 +83,11 @@ echo $accountID;
           <div class="card-body bg-success p-4">
             <div class="row">
               <div class="col-md-6"> 
-                <h1 class="d-inline-block text-white ms-4">Student Profile</h1>
+                <h1 class="d-inline-block text-white ms-4">'; 
+                if($accountID[0]=='S') echo 'Student';
+                else if($accountID[0]=='A') echo 'Alumni';
+                else if($accountID[0]=='F') echo 'Faculty';
+                echo ' Profile</h1>
               </div>
               <div class="col-md-2"></div>
               <div class="col-md-4" style="text-align: right;">
@@ -374,7 +378,7 @@ echo $accountID;
                   $r = oci_execute($stid);
                   while ($row1 = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
                     {
-                      if($rowRE['NAME']==$row1['NAME']) continue;
+                      //if($rowRE['NAME']==$row1['NAME']) continue;
                       if($countt==1)
                       {
                         echo '
@@ -400,7 +404,7 @@ echo $accountID;
               $r = oci_execute($stid);
               while ($row1 = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
                 {
-                  if($rowRE['NAME']==$row1['NAME']) continue;
+                  //if($rowRE['NAME']==$row1['NAME']) continue;
                   if($countt==1)
                   {
                     echo '
@@ -424,7 +428,7 @@ echo $accountID;
             $r = oci_execute($stid);
             while ($row1 = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
               {
-                if($rowRE['NAME']==$row1['NAME']) continue;
+                //if($rowRE['NAME']==$row1['NAME']) continue;
                 if($countt==1)
                 {
                   echo '
