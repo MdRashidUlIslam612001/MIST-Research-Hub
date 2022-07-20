@@ -1,13 +1,7 @@
 <?php
 session_start(); // this NEEDS TO BE AT THE TOP of the page before any output etc
 
-$conn = oci_connect('DBMS', 'DBMS','localhost/XE')
-  or die(oci_error());
-if (!$conn) {
-  echo "sorry";
-} else {
-}
-
+include 'db_conn.php';
 ?><!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,8 +52,8 @@ if (!$conn) {
   </head>
   <body>
     <!-- navbar starts -->
-    <!-- <div id="nav-placeholder"></div>
-    <script> $(function(){ $("#nav-placeholder").load("navbar.html"); }); </script> -->
+    <div id="nav-placeholder"></div>
+    <script> $(function(){ $("#nav-placeholder").load("navbar.php"); }); </script>
     <!-- navbar ends -->
 
     <!-- papers -->
@@ -71,7 +65,7 @@ if (!$conn) {
             <div class="card mb-2 border border-3  border-success">
               <h5 class="card-header text-white bg-success">Funds</h5>
               <?php
-                                $sql = "select * from FUND_REQUESTS JOIN NEEDS USING (FUND_ID) JOIN RESEARCH USING (RESEARCH_ID) where FUND_STATUS='Approved'
+                                $sql = "select * from FUND_REQUESTS JOIN NEEDS USING (FUND_ID) JOIN RESEARCH USING (RESEARCH_ID) where FUND_STATUS='Not Raised'
                                 ";
                                 $stid = oci_parse($conn, $sql);
                                 $r = oci_execute($stid);

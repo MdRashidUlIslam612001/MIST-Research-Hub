@@ -40,7 +40,7 @@ include 'db_conn.php';
               <a class="nav-link" href="paper.php">Papers</a>
             </li>
             <li class="nav-item mx-3">
-              <a class="nav-link" href="funds.html"
+              <a class="nav-link" href="funds.php"
                 >Funds</a
               >
             </li>
