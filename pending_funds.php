@@ -1,5 +1,5 @@
 <?php
-session_start(); // this NEEDS TO BE AT THE TOP of the page before any output etc
+session_start();
 
 include 'db_conn.php';
 ?>
@@ -404,7 +404,8 @@ include 'db_conn.php';
 
 
               <?php
-                                $sql = "select * from FUND_REQUESTS JOIN NEEDS USING (FUND_ID) JOIN RESEARCH USING (RESEARCH_ID)  ";
+                                $sql = "select * from FUND_REQUESTS JOIN NEEDS USING (FUND_ID) JOIN RESEARCH USING (RESEARCH_ID) where FUND_STATUS='Not_Approved'
+                                ";
                                 $stid = oci_parse($conn, $sql);
                                 $r = oci_execute($stid);
                                 while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) 
@@ -427,7 +428,7 @@ include 'db_conn.php';
 
                                   <div class=" text-black">
                                   <p class="m-0 p-2">
-                                  <h6 class="d-inline-block">Publisher-' .$row['PUBLISHER']. '</h6>
+                                   <h6 class="d-inline-block"></h6>
                                     <a href="#" class="text-decoration-none float-end">
                                       <div class="btn-group float-end" role="group" aria-label="Basic example">
                                         <button type="button" class="btn btn-outline-success">Accept</button>
