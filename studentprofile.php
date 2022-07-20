@@ -89,10 +89,12 @@ echo $accountID;
                 else if($accountID[0]=='F') echo 'Faculty';
                 echo ' Profile</h1>
               </div>
-              <div class="col-md-2"></div>
+              <div class="col-md-2"></div>';
+              if($accountID[0]=='S') echo '
               <div class="col-md-4" style="text-align: right;">
                   <a href="#" button type="button" class="btn-lg btn-warning my-auto" style="text-decoration: none;">Update my account</a>
-              </div>
+              </div>';
+              echo '
             </div>
           </div>
         </div>
